@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Rosemary Haven Resort | Luxury Hotel Sri Lanka</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <style>
+        /* CSS Variables for Consistent Theming */
+        :root {
+            --primary-gold: #c9a96e;
+            --primary-dark: #2c3e50;
+            --accent-light: #f8f9fa;
+            --text-light: #7f8c8d;
+            --white: #ffffff;
+            --black: #000000;
+            --gradient-primary: linear-gradient(135deg, #c9a96e, #b8905a);
+            --gradient-dark: linear-gradient(135deg, #2c3e50, #34495e);
+            --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 15px 50px rgba(0, 0, 0, 0.15);
+            --shadow-heavy: 0 25px 80px rgba(0, 0, 0, 0.3);
+            --border-radius: 12px;
+            --transition-fast: 0.3s ease;
+            --transition-medium: 0.5s ease;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--primary-dark);
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--primary-dark);
+        }
+
+        /* Enhanced Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all var(--transition-fast);
+            border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-light);
+        }
+
+        .navbar {
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            color: var(--primary-gold);
+            margin-bottom: -5px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            font-size: 11px;
+            color: var(--text-light);
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all var(--transition-fast);
+            position: relative;
+            padding: 10px 0;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-gold);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: all var(--transition-fast);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--primary-dark);
+            transition: var(--transition-fast);
+        }
+
+        /* Luxury Page Header */
+        .page-header {
+            height: 70vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-primary);
+            opacity: 0.1;
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header h1 {
+            font-size: 4.5rem;
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            color: var(--white);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 10;
+            background: var(--white);
+            padding: 20px 0;
+        }
+
+        .section-header h2 {
+            font-size: 3.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+            font-weight: 600;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-header p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Enhanced Buttons */
+        .btn-primary,
+        .btn-secondary,
+        .btn-luxury {
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--white);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-gold);
+            border: 2px solid var(--primary-gold);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-gold);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 100px;
+        }
+
+        /* Enhanced Contact Information */
+        .contact-info {
+            background: var(--accent-light);
+            padding: 60px 50px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+            position: relative;
+        }
+
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 50px;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-medium);
+            transition: all var(--transition-fast);
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .contact-icon i {
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .contact-details h3 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .contact-details p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .contact-details a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            font-weight: 500;
+        }
+
+        .contact-details a:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Enhanced Contact Form */
+        .contact-form {
+            background: var(--white);
+            padding: 60px 50px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+            border: 1px solid rgba(201, 169, 110, 0.1);
+        }
+
+        .contact-form h3 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            transition: all var(--transition-fast);
+            font-family: 'Poppins', sans-serif;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Map Section */
+        .map-section {
+            background: var(--accent-light);
+            padding: 120px 0;
+        }
+
+        .map-container {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                        url('Photo-Rancho-Valencia-Resort-Spa.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            box-shadow: var(--shadow-medium);
+            position: relative;
+        }
+
+        .map-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-primary);
+            opacity: 0.2;
+            border-radius: var(--border-radius);
+        }
+
+        .map-container:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .map-placeholder {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .map-placeholder i {
+            font-size: 5rem;
+            margin-bottom: 25px;
+            color: var(--white);
+        }
+
+        .map-placeholder h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .map-placeholder p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Quick Contact */
+        .quick-contact {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .quick-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .quick-contact-item {
+            background: var(--accent-light);
+            padding: 50px 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: all var(--transition-fast);
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quick-contact-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: left var(--transition-fast);
+            z-index: 0;
+            opacity: 0.05;
+        }
+
+        .quick-contact-item:hover::before {
+            left: 0;
+        }
+
+        .quick-contact-item:hover {
+            transform: translateY(-10px);
+            background: var(--white);
+            border-color: var(--primary-gold);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .quick-contact-item i {
+            font-size: 3rem;
+            color: var(--primary-gold);
+            margin-bottom: 25px;
+            transition: all var(--transition-fast);
+            position: relative;
+            z-index: 1;
+        }
+
+        .quick-contact-item:hover i {
+            transform: scale(1.2);
+        }
+
+        .quick-contact-item h3 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quick-contact-item p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quick-contact-item .btn-primary {
+            font-size: 12px;
+            padding: 15px 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--accent-light);
+            padding: 120px 0;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 25px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            border: 1px solid rgba(201, 169, 110, 0.1);
+            transition: all var(--transition-fast);
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-medium);
+        }
+
+        .faq-question {
+            padding: 30px;
+            background: var(--white);
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all var(--transition-fast);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .faq-question:hover {
+            background: var(--accent-light);
+        }
+
+        .faq-question i {
+            color: var(--primary-gold);
+            transition: transform var(--transition-fast);
+            font-size: 1.2rem;
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all var(--transition-fast);
+            background: var(--accent-light);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 30px 30px;
+            max-height: 300px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* Enhanced Footer */
+        .footer-enhanced {
+            background: var(--gradient-dark);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo h3 {
+            font-size: 2.2rem;
+            color: var(--primary-gold);
+            margin-bottom: -8px;
+            font-weight: 700;
+        }
+
+        .footer-logo span {
+            font-size: 12px;
+            color: #bdc3c7;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .footer-section p {
+            color: #bdc3c7;
+            line-height: 1.8;
+            margin: 25px 0;
+            font-size: 16px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            font-size: 16px;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            font-size: 18px;
+        }
+
+        .social-links a:hover {
+            background: var(--white);
+            color: var(--primary-gold);
+            transform: translateY(-3px);
+        }
+
+        .contact-info-footer p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info-footer i {
+            color: var(--primary-gold);
+            width: 20px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #bdc3c7;
+            font-size: 16px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: var(--transition-fast);
+                box-shadow: var(--shadow-light);
+                padding: 30px 0;
+                gap: 20px;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .page-header h1 {
+                font-size: 3rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .quick-contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .contact-form,
+            .contact-info {
+                padding: 40px 30px;
+            }
+            
+            .quick-contact-item {
+                padding: 40px 30px;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-gold);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>Rosemary Haven</h1>
+                    <span>Resort & Spa</span>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+                    <li><a href="amenities.html" class="nav-link">Amenities</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Luxury Page Header -->
+    <section class="page-header">
+        <div class="page-header-content" data-aos="fade-up">
+            <h1>Contact Us</h1>
+            <p>Connect with our luxury hospitality team for personalized service and exceptional experiences</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Get in Touch</h2>
+                <p>Our dedicated team is available 24/7 to assist you with reservations, inquiries, and creating unforgettable experiences</p>
+            </div>
+            
+            <div class="contact-content">
+                <!-- Enhanced Contact Information -->
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Resort Location</h3>
+                            <p>Paradise Valley, Colombo<br>
+                            Sri Lanka 10250<br>
+                            <strong>GPS:</strong> 6.9271° N, 79.8612° E</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone Numbers</h3>
+                            <p>Reservations: <a href="tel:+94111234567">+94 11 123 4567</a><br>
+                            General Inquiries: <a href="tel:+94119876543">+94 11 987 6543</a><br>
+                            Concierge: <a href="tel:+94115551234">+94 11 555 1234</a><br>
+                            Emergency: <a href="tel:+94111111111">+94 11 111 1111</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email Addresses</h3>
+                            <p>General: <a href="mailto:info@rosemaryhaven.lk">info@rosemaryhaven.lk</a><br>
+                            Reservations: <a href="mailto:reservations@rosemaryhaven.lk">reservations@rosemaryhaven.lk</a><br>
+                            Events: <a href="mailto:events@rosemaryhaven.lk">events@rosemaryhaven.lk</a><br>
+                            Spa: <a href="mailto:spa@rosemaryhaven.lk">spa@rosemaryhaven.lk</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Service Hours</h3>
+                            <p>Reception: 24/7 Available<br>
+                            Concierge: 6:00 AM - 12:00 AM<br>
+                            Reservations: 7:00 AM - 11:00 PM<br>
+                            Guest Services: 24/7 Available</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Enhanced Contact Form -->
+                <div class="contact-form" data-aos="fade-left">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Inquiry Type</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select inquiry type</option>
+                                <option value="reservation">Room Reservation</option>
+                                <option value="event">Event & Wedding Planning</option>
+                                <option value="spa">Spa & Wellness Services</option>
+                                <option value="dining">Dining Reservations</option>
+                                <option value="golf">Golf Course Booking</option>
+                                <option value="transport">Transportation Services</option>
+                                <option value="feedback">Guest Feedback</option>
+                                <option value="corporate">Corporate Inquiries</option>
+                                <option value="other">Other Services</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Please provide details about your inquiry, preferred dates, special requirements, or any questions you may have..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary" style="width: 100%;">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Find Our Paradise</h2>
+                <p>Located in the heart of Colombo's most prestigious district</p>
+            </div>
+            
+            <div class="map-container" data-aos="fade-up" data-aos-delay="200">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Interactive Resort Map</h3>
+                    <p>Paradise Valley, Colombo, Sri Lanka<br>Click to view detailed directions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact -->
+    <section class="quick-contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Direct Contact Services</h2>
+                <p>Choose the most convenient way to connect with our specialized teams</p>
+            </div>
+            
+            <div class="quick-contact-grid">
+                <div class="quick-contact-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-bed"></i>
+                    <h3>Luxury Reservations</h3>
+                    <p>Book your luxury accommodation or modify existing reservations with our dedicated booking specialists available 24/7.</p>
+                    <a href="tel:+94111234567" class="btn-primary">
+                        <span>Call Reservations</span>
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+                
+                <div class="quick-contact-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-concierge-bell"></i>
+                    <h3>Personal Concierge</h3>
+                    <p>Get personalized assistance with activities, dining reservations, transportation, and exclusive local experiences.</p>
+                    <a href="tel:+94115551234" class="btn-primary">
+                        <span>Contact Concierge</span>
+                        <i class="fas fa-user-tie"></i>
+                    </a>
+                </div>
+                
+                <div class="quick-contact-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-glass-cheers"></i>
+                    <h3>Event Planning</h3>
+                    <p>Plan your dream wedding, corporate event, or special celebration with our professional events coordination team.</p>
+                    <a href="mailto:events@rosemaryhaven.lk" class="btn-primary">
+                        <span>Email Events Team</span>
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <div class="quick-contact-item" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-spa"></i>
+                    <h3>Spa & Wellness</h3>
+                    <p>Book rejuvenating spa treatments, wellness programs, and personalized therapy sessions for ultimate relaxation.</p>
+                    <a href="tel:+94119876543" class="btn-primary">
+                        <span>Book Spa Services</span>
+                        <i class="fas fa-leaf"></i>
+                    </a>
+                </div>
+                
+                <div class="quick-contact-item" data-aos="fade-up" data-aos-delay="500">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Fine Dining</h3>
+                    <p>Reserve tables at our award-winning restaurants and arrange private dining experiences with our culinary team.</p>
+                    <a href="mailto:dining@rosemaryhaven.lk" class="btn-primary">
+                        <span>Dining Reservations</span>
+                        <i class="fas fa-wine-glass"></i>
+                    </a>
+                </div>
+                
+                <div class="quick-contact-item" data-aos="fade-up" data-aos-delay="600">
+                    <i class="fas fa-golf-ball"></i>
+                    <h3>Golf Course</h3>
+                    <p>Book tee times, arrange golf lessons, and access our championship course with professional golf services.</p>
+                    <a href="tel:+94115551234" class="btn-primary">
+                        <span>Golf Reservations</span>
+                        <i class="fas fa-flag"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our luxury resort and premium services</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <button class="faq-question">
+                        What are your check-in and check-out times?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Check-in time is 3:00 PM and check-out time is 11:00 AM. We offer complimentary early check-in and late check-out based on availability. For guaranteed early arrival or late departure, please contact our reservations team.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <button class="faq-question">
+                        Do you provide luxury airport transportation?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we provide complimentary luxury airport transportation in our fleet of premium vehicles. We also offer helicopter transfers and private jet arrangements. Please contact our concierge at least 24 hours in advance to arrange your preferred transportation.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <button class="faq-question">
+                        Are pets welcome at Rosemary Haven Resort?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we are a luxury pet-friendly resort. We welcome well-behaved pets with advance notice and offer specialized pet services including professional sitting, grooming, gourmet pet dining, and dedicated pet amenities. Additional fees apply for pet services.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                    <button class="faq-question">
+                        What dining experiences are available?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer multiple award-winning dining venues including our Michelin-starred fine dining restaurant, rooftop bar, beachfront dining pavilion, wine cellar tastings, and private chef experiences. 24-hour gourmet room service is also available. Reservations are highly recommended.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                    <button class="faq-question">
+                        Is high-speed internet available throughout the resort?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, complimentary high-speed Wi-Fi is available throughout the entire resort, including all guest accommodations, public areas, outdoor spaces, and recreational facilities. We also provide business center services and in-room connectivity solutions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+                    <button class="faq-question">
+                        What activities and services are available for families?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer comprehensive family services including a supervised kids' club with age-appropriate activities, children's pool areas, family-friendly dining options, playground facilities, and professional childcare services. Our concierge can arrange family excursions and educational experiences.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="700">
+                    <button class="faq-question">
+                        Can you arrange special celebrations and events?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! Our professional events team specializes in creating unforgettable celebrations including weddings, anniversaries, corporate events, and private parties. We offer comprehensive planning services, custom catering, floral design, and exclusive venue access.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="800">
+                    <button class="faq-question">
+                        What spa and wellness services do you offer?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our award-winning spa offers a comprehensive range of treatments including signature massages, facial therapies, body treatments, couples spa experiences, wellness consultations, yoga sessions, and meditation programs. All treatments use premium organic products and are performed by certified therapists.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer-enhanced">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>Rosemary Haven</h3>
+                        <span>Resort & Spa</span>
+                    </div>
+                    <p>Where luxury meets paradise. Experience the epitome of refined hospitality in our award-winning resort with personalized service and world-class amenities.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="rooms.html">Luxury Suites</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Luxury Services</h4>
+                    <ul>
+                        <li><a href="#">24/7 Concierge</a></li>
+                        <li><a href="#">Spa & Wellness</a></li>
+                        <li><a href="#">Fine Dining</a></li>
+                        <li><a href="#">Event Planning</a></li>
+                        <li><a href="#">Golf Course</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <div class="contact-info-footer">
+                        <p><i class="fas fa-map-marker-alt"></i> Paradise Valley, Colombo, Sri Lanka</p>
+                        <p><i class="fas fa-phone"></i> +94 11 123 4567</p>
+                        <p><i class="fas fa-envelope"></i> info@rosemaryhaven.lk</p>
+                        <p><i class="fas fa-clock"></i> 24/7 Guest Services</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rosemary Haven Resort. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Enhanced contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const contactData = {};
+            
+            for (let [key, value] of formData.entries()) {
+                contactData[key] = value;
+            }
+            
+            // Show enhanced success message
+            const message = `🌟 Thank you for contacting Rosemary Haven Resort, ${contactData.firstName}!\n\n✅ Your inquiry regarding "${contactData.subject}" has been received\n📧 We will respond to ${contactData.email} within 2 hours\n📞 For urgent matters, call +94 11 123 4567\n\n🏨 Our luxury hospitality team is committed to providing exceptional service and creating unforgettable experiences.\n\nWe look forward to welcoming you to paradise!`;
+            
+            alert(message);
+            
+            // Reset form with animation
+            this.reset();
+            
+            // Add success animation
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span>Message Sent!</span><i class="fas fa-check"></i>';
+            submitBtn.style.background = '#27ae60';
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.background = '';
+            }, 3000);
+        });
+
+        // Enhanced FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items with animation
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Enhanced quick contact interactions
+        document.querySelectorAll('.quick-contact-item .btn-primary').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('tel:') || this.getAttribute('href').startsWith('mailto:')) {
+                    // Let the default action happen for tel: and mailto: links
+                    return;
+                }
+                
+                e.preventDefault();
+                const contactType = this.closest('.quick-contact-item').querySelector('h3').textContent;
+                const description = this.closest('.quick-contact-item').querySelector('p').textContent;
+                
+                alert(`🏨 ${contactType}\n\n${description}\n\n📞 Direct Line: +94 11 123 4567\n📧 Email: info@rosemaryhaven.lk\n\nOur team is available 24/7 to assist you with luxury service and personalized attention.`);
+            });
+        });
+
+        // Enhanced map interaction
+        document.querySelector('.map-container').addEventListener('click', function() {
+            alert('🗺️ Interactive Resort Map\n\n📍 Rosemary Haven Resort\nParadise Valley, Colombo, Sri Lanka\n\n🚗 Directions:\n• 15 minutes from Bandaranaike International Airport\n• 10 minutes from Colombo City Center\n• Complimentary luxury transportation available\n\n📞 For detailed directions: +94 11 123 4567');
+        });
+
+        // Add scroll-to-top functionality
+        const scrollToTopBtn = document.createElement('button');
+        scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        scrollToTopBtn.style.cssText = `
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--primary-gold);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-medium);
+        `;
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        scrollToTopBtn.addEventListener('mouseenter', () => {
+            scrollToTopBtn.style.transform = 'translateY(-3px)';
+            scrollToTopBtn.style.boxShadow = 'var(--shadow-heavy)';
+        });
+
+        scrollToTopBtn.addEventListener('mouseleave', () => {
+            scrollToTopBtn.style.transform = 'translateY(0)';
+            scrollToTopBtn.style.boxShadow = 'var(--shadow-medium)';
+        });
+
+        document.body.appendChild(scrollToTopBtn);
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+
+        // Parallax effect for page header
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const pageHeader = document.querySelector('.page-header');
+            if (pageHeader) {
+                pageHeader.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Enhanced form validation
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() !== '') {
+                    this.style.borderColor = 'var(--primary-gold)';
+                    this.style.background = '#f8f9fa';
+                } else {
+                    this.style.borderColor = '#e0e0e0';
+                    this.style.background = 'white';
+                }
+            });
+        });
+
+        // Contact item hover effects
+        document.querySelectorAll('.contact-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(10px)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>
